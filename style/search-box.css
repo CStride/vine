@@ -1,6 +1,10 @@
 #search-box {
+    align-self: center;
+
     width: 600px;
-    height: 100px;
+    height: 60px;
+
+    display: flex;
 
     background-color: white;
     border-radius: 10px;
@@ -8,8 +12,8 @@
 }
 
 #search-box > #search-engine {
-    width: 100px;
-    height: 100px;
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
 
     background-image: url("../assets/google.png");
@@ -20,13 +24,14 @@
 
 #search-box > #input-box {
     width: 400px;
-    height: 100px;
+    height: 100%;
 
+    margin: 0 40px;
     border: none;
 }
 
 #search-box > #icon-searching {
-    width: 100px;
-    height: 100px;
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
 }
