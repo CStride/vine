@@ -7,13 +7,14 @@
     display: flex;
 
     background-color: white;
-    border-radius: 10px;
+    border-radius: 24px;
     border: 1px solid gray;
 }
 
 #search-box > #search-engine {
-    width: 60px;
-    height: 60px;
+    margin-left: 2px;
+    width: 54px;
+    height: 54px;
     border-radius: 50%;
 
     background-image: url("../assets/google.png");
@@ -23,15 +24,15 @@
 }
 
 #search-box > #input-box {
-    width: 400px;
+    width: 480px;
     height: 100%;
-
-    margin: 0 40px;
+    margin: 0 auto;
     border: none;
 }
 
 #search-box > #icon-searching {
-    width: 60px;
-    height: 60px;
+    width: 24px;
+    height: 24px;
+    margin-right: 24px;
     border-radius: 50%;
 }

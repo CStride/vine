@@ -9,8 +9,11 @@
 }
 
 #layout > #center {
-    width: 100%;
-    height: calc(100% - 150px);
+    width: calc(100% - 4px);
+    height: calc(100% - 154px);
+    border-width: 2px;
+    border-style: solid;
+    border-color: transparent;
 }
 
 #center > * {
