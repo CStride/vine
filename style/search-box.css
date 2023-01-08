@@ -1,0 +1,32 @@
+#search-box {
+    width: 600px;
+    height: 100px;
+
+    background-color: white;
+    border-radius: 10px;
+    border: 1px solid gray;
+}
+
+#search-box > #search-engine {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+
+    background-image: url("../assets/google.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#search-box > #input-box {
+    width: 400px;
+    height: 100px;
+
+    border: none;
+}
+
+#search-box > #icon-searching {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}

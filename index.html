@@ -10,11 +10,17 @@
     <link rel="stylesheet" type="text/css" href="./style/main.css"/>
 </head>
 <body>
-    <script type="module">
-        import { node_main } from "./layout/main.js"
-
-        const node_body = document.body;
-        node_body.appendChild(node_main);
-    </script>
+    <div id="layout">
+        <div id="top"></div>
+        <div id="center">
+            <span id="title">VINE</span>
+            <div id="search-box">
+                <div id="search-engine"></div>
+                <input id="input-box" type="text" />
+                <img id="icon-searching" class="icon" src="./assets/searching.png"/>
+            </div>
+            <div id="QLink-List"></div>
+        </div>
+    </div>
 </body>
 </html>
