@@ -15,7 +15,7 @@
 
 #search-box > #search-engine {
     align-self: center;
-    margin-left: 2px;
+    margin-left: 6px;
     width: 32px;
     height: 32px;
     border-radius: 50%;
@@ -33,7 +33,7 @@
     border: none;
     outline: 0;
 
-    font-size: 1.5em;
+    font-size: 1em;
 }
 
 #search-box > #icon-searching {
