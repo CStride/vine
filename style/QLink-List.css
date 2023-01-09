@@ -13,27 +13,33 @@
     width: 100px;
     height: 100px;
     border-radius: 3px;
-
-    display: flex;
+    border: transparent solid 1px;
 
     background-color: white;
 
 }
 #QLink-List > .QLink:hover, #addshortcut:hover {
-    background-color: gray;
+    background-color: #f2f4f6;
 }
 
 #QLink-List .iconContainer {
-    align-self: center;
+    display: flex;
+    justify-content: center;
 
     width: 48px;
     height: 48px;
     border-radius: 50%;
 
-    background-color: #fffff5;
+    background-color: #bbded6;
+
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 #QLink-List .iconContainer > img {
+    align-self: center;
+
     width: 24px;
     height: 24px;
     border-radius: 50%;
@@ -46,8 +52,12 @@
 #QLink-List .titleContainer {
     align-self: center;
 
-    width: 96px;
+    width: 90px;
     height: 36px;
 
-    margin: auto;
+    margin: 10px 0 0 0;
+
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
 }
