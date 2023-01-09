@@ -8,3 +8,42 @@
 #QLink-List > * {
     float: left;
 }
+
+#QLink-List > .QLink, #addshortcut {
+    width: 100px;
+    height: 100px;
+    border-radius: 3px;
+
+    display: flex;
+
+    background-color: white;
+
+}
+#QLink-List > .QLink:hover, #addshortcut:hover {
+    background-color: gray;
+}
+
+#QLink-List .iconContainer {
+    align-self: center;
+
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+
+    background-color: #fffff5;
+}
+
+#QLink-List .iconContainer > img {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+}
+
+#QLink-List .titleContainer {
+    align-self: center;
+
+    width: 96px;
+    height: 36px;
+
+    margin: auto;
+}
