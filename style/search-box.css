@@ -2,12 +2,12 @@
     align-self: center;
 
     width: 600px;
-    height: 60px;
+    height: 48px;
 
     display: flex;
 
     background-color: white;
-    border-radius: 30px;
+    border-radius: 24px;
     border: 1px solid transparent;
 
     box-shadow: 0px 1px 5px grey;
@@ -16,8 +16,8 @@
 #search-box > #search-engine {
     align-self: center;
     margin-left: 2px;
-    width: 54px;
-    height: 54px;
+    width: 32px;
+    height: 32px;
     border-radius: 50%;
 
     background-image: url("../assets/google.png");

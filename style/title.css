@@ -1,3 +1,7 @@
+@font-face {
+    font-family: violetsimle;
+    src: url("../assets/fonts/violetsmile-gx8p6.ttf");
+}
 #title {
     display: block;
     margin: 12px 0;
@@ -5,6 +9,7 @@
     height: fit-content;
 
     text-align: center;
+    font-family: violetsimle;
     font-size: 2em;
     font-weight: 600;
 }
