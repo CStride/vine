@@ -31,6 +31,7 @@ const getQLinkNode = function (link, title, icon) {
 
 const ADDSHORTCUT = document.createElement("button");
 ADDSHORTCUT.setAttribute("id", "addshortcut");
+ADDSHORTCUT.setAttribute("title", "add shortcut");
 
 const node_iconContainer = document.createElement("div");
 node_iconContainer.setAttribute("class", "iconContainer");
