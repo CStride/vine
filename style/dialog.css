@@ -1,35 +1,38 @@
 #addshortcut-dialog {
-    display: flex;
-
     width: 540px;
 
     border: gray solid 1px;
     margin: 20px 0 0 0;
 }
 
+#addshortcut-dialog > span {
+    margin: 10px 0 5px 10px;
+}
 #addshortcut-dialog span {
     display: block;
 }
 
 
 #addshortcut-dialog > #dialogItem-container {
+    margin: 10px 0 6px 5px;
     width: 500px;
     border: transparent solid 1px;
 }
 
 #dialogItem-container > .dialog-item {
     width: 500px;
+    margin-bottom: 15px;
 }
 
 #dialogItem-container > .dialog-item > input {
-    width: 480px;
-    height: 36px;
+    width: 320px;
+    height: 32px;
 
     border: 0;
     outline: 0;
     border-radius: 3px;
 
-    background-color: darkgrey;
+    background-color: #f2f4f6;
 }
 
 #addshortcut-dialog > #dialogButton-container {
@@ -38,8 +41,11 @@
 }
 
 #dialogButton-container > button {
-    width: 96px;
-    height: 48px;
+    width: 84px;
+    height: 36px;
+    margin: 10px 5px;
+
+    background-color: #39BAE8;
 }
 
 
