@@ -40,7 +40,7 @@
     background-color: #f2f4f6;
 }
 #dialogItem-container > .dialog-item > input:focus {
-    border: #39BAE8 solid 3px;
+    border-bottom-color: #39BAE8;
 }
 
 #addshortcut-dialog > #dialogButton-container {
