@@ -1,0 +1,45 @@
+#addshortcut-dialog {
+    display: flex;
+
+    width: 540px;
+
+    border: gray solid 1px;
+    margin: 20px 0 0 0;
+}
+
+#addshortcut-dialog span {
+    display: block;
+}
+
+
+#addshortcut-dialog > #dialogItem-container {
+    width: 500px;
+    border: transparent solid 1px;
+}
+
+#dialogItem-container > .dialog-item {
+    width: 500px;
+}
+
+#dialogItem-container > .dialog-item > input {
+    width: 480px;
+    height: 36px;
+
+    border: 0;
+    outline: 0;
+    border-radius: 3px;
+
+    background-color: darkgrey;
+}
+
+#addshortcut-dialog > #dialogButton-container {
+    width: 500px;
+    border: transparent solid 1px;
+}
+
+#dialogButton-container > button {
+    width: 96px;
+    height: 48px;
+}
+
+
