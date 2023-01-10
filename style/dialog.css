@@ -1,5 +1,8 @@
 #addshortcut-dialog {
     width: 540px;
+    position: absolute;
+    top: 190px;
+    background-color: white;
 
     border: gray solid 1px;
     margin: 20px 0 0 0;
@@ -14,7 +17,7 @@
 
 
 #addshortcut-dialog > #dialogItem-container {
-    margin: 10px 0 6px 5px;
+    margin: 20px 0 2px 5px;
     width: 500px;
     border: transparent solid 1px;
 }
@@ -25,14 +28,19 @@
 }
 
 #dialogItem-container > .dialog-item > input {
-    width: 320px;
-    height: 32px;
+    width: 480px;
+    height: 28px;
 
-    border: 0;
+    padding-left: 8px;
+    margin-top: 3px;
+    border: transparent solid 3px;
     outline: 0;
-    border-radius: 3px;
+    border-radius: 4px;
 
     background-color: #f2f4f6;
+}
+#dialogItem-container > .dialog-item > input:focus {
+    border: #39BAE8 solid 3px;
 }
 
 #addshortcut-dialog > #dialogButton-container {
@@ -43,9 +51,14 @@
 #dialogButton-container > button {
     width: 84px;
     height: 36px;
-    margin: 10px 5px;
+    margin: 7px 5px;
+    border: gray solid 1px;
+    color: #39BAE8;
+    border-radius: 3px;
 
-    background-color: #39BAE8;
+    background-color: white;
+
+    cursor: pointer;
 }
 
 
