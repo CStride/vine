@@ -1,0 +1,19 @@
+{
+    "QLinks": [
+        {
+            "title": "baidu",
+            "url": "https://www.baidu.com",
+            "icon": "https://www.baidu.com/favicon.ico"
+        },
+        {
+            "title": "bilibili",
+            "url": "https://www.bilibili.com/",
+            "icon": "https://www.bilibili.com/favicon.ico"
+        },
+        {
+            "title": "leetcode",
+            "url": "https://leetcode.cn/",
+            "icon": "https://leetcode.cn/favicon.ico"
+        }
+    ]
+}

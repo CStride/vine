@@ -45,6 +45,31 @@
 
         const node_QLinkList = document.querySelector("#QLink-List");
         node_QLinkList.appendChild(ADDSHORTCUT);
+
+        ADDSHORTCUT.addEventListener("click", openAddShortcutDialog);
+
+        const node_dialogcancle = document.querySelector("dialog-cancle");
+        const node_overlay = document.querySelector("#overlay");
+        node_dialogcancle.addEventListener("click", closeAddShortcutDialog);
+        node_overlay.addEventListener("click", closeAddShortcutDialog);
+
+        // ADDSHORTCUT.addEventListener("blur", closeAddShortcutDialog);
+
+        function openAddShortcutDialog() {
+            const dialog = document.getElementById("addshortcut-dialog");
+            const overlay = document.getElementById("overlay");
+
+            dialog.style.display = "block";
+            overlay.style.display = "block";
+        }
+
+        function closeAddShortcutDialog() {
+            const dialog = document.getElementById("addshortcut-dialog");
+            const overlay = document.getElementById("overlay");
+
+            dialog.style.display = "none";
+            overlay.style.display = "none";
+        }
     </script>
 </body>
 </html>

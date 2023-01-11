@@ -1,4 +1,6 @@
 #addshortcut-dialog {
+    display: none;
+
     width: 540px;
     position: absolute;
     z-index: 3;
