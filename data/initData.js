@@ -1,6 +1,6 @@
 // const basePath = "./data"
 
-import QLinks from "/data/QLinks.json"
+import QLinks from "/data/QLinks.json" assert { type: 'JSON' };
 import { getQLinkNode } from "/components/QLinkFunc.js"
 
 function initializeData() {
