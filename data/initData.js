@@ -1,11 +1,12 @@
 // const basePath = "./data"
 
-import QLinks from "/data/QLinks.json" assert { type: 'JSON' };
-import { getQLinkNode } from "/components/QLinkFunc.js"
+// import QLinks from "./QLinks.json";
+import { getQLinkNode } from "../components/QLinkFunc.js"
 
 function initializeData() {
-    const str = JSON.stringify(QLinks);
-    const linkList = JSON.parse(str);
+//    const str = JSON.stringify(QLinks);
+//    const linkList = JSON.parse(str);
+    const linkList = JSON.parse(QLinks);
     
     const node_QLinkList = document.getElementById("QLink-List");
 
