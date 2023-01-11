@@ -53,6 +53,9 @@
         node_dialogcancle.addEventListener("click", closeAddShortcutDialog);
         node_overlay.addEventListener("click", closeAddShortcutDialog);
 
+        const node_dialogdone = document.querySelector("#dialog-cancle");
+        node_dialogdone.addEventListener("click", addShortcut);
+
         // ADDSHORTCUT.addEventListener("blur", closeAddShortcutDialog);
 
         function openAddShortcutDialog() {
@@ -79,7 +82,7 @@
             const url = input_url.value;
 
             console.log(name, url);
-
+            closeAddShortcutDialog();
         }
     </script>
 </body>
