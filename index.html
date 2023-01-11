@@ -27,11 +27,11 @@
         <div id="dialogItem-container">
             <div class="dialog-item">
                 <span>Name</span>
-                <input type="text"/>
+                <input id="dialogInput-name" type="text"/>
             </div>
             <div class="dialog-item">
                 <span>URL</span>
-                <input type="text"/>
+                <input id="dialogInput-url" type="text"/>
             </div>
         </div>
         <div id="dialogButton-container">
@@ -69,6 +69,17 @@
 
             dialog.style.display = "none";
             overlay.style.display = "none";
+        }
+
+        function addShortcut() {
+            const input_name = document.querySelector("#dialogInput-name");
+            const input_url = document.querySelector("#dialogInput-url");
+
+            const name = input_name.value;
+            const url = input_url.value;
+
+            console.log(name, url);
+
         }
     </script>
 </body>
