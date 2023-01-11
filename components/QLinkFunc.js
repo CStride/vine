@@ -1,4 +1,4 @@
-const getQLinkNode = function (link, title, icon) {
+const getQLinkNode = function (title, link, icon) {
     const node_QLink = document.createElement("a");
     node_QLink.setAttribute("class", "QLink");
     node_QLink.setAttribute("title", title);
