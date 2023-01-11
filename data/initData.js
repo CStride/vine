@@ -4,7 +4,8 @@ import QLinks from "/data/QLinks.json" assert { type: 'JSON' };
 import { getQLinkNode } from "/components/QLinkFunc.js"
 
 function initializeData() {
-    const linkList = JSON.parse(QLinks);
+    const str = JSON.stringify(QLinks);
+    const linkList = JSON.parse(str);
     
     const node_QLinkList = document.getElementById("QLink-List");
 
