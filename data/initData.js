@@ -1,7 +1,7 @@
-const basePath = "./data"
+// const basePath = "./data"
 
-import QLinks from (basePath + "/QLinks.json")
-import { getQLinkNode } from "../components/QLinkFunc.js"
+import QLinks from "/data/QLinks.json"
+import { getQLinkNode } from "/components/QLinkFunc.js"
 
 function initializeData() {
     const linkList = JSON.parse(QLinks);
