@@ -71,12 +71,11 @@
             });
             menuItem.addEventListener("mouseenter", (event) => {
                 event.stopPropagation();
-                event.cancelBubble = true;
                 menuItem.style.backgroundColor = "#2E94B9";
+                console.log("menuItem");
             });
             menuItem.addEventListener("mouseleave", (event) => {
                 event.stopPropagation();
-                event.cancelBubble = true;
                 menuItem.style.backgroundColor = "white";
             })
 
@@ -88,15 +87,8 @@
         const nodes_menuContainer = document.getElementsByClassName("menuContainer");
         const menuContainers = Array.from(nodes_menuContainer);
         menuContainers.forEach((menuContainer) => {
-            menuContainer.addEventListener("mouseenter", (event) => {
-                event.cancelBubble = true;
+            menuContainer.addEventListener("click", (event) => {
                 event.preventDefault();
-                event.stopPropagation();
-            });
-            menuContainer.addEventListener("mouseleave", (event) => {
-                event.cancelBubble = true;
-                event.preventDefault();
-                event.stopPropagation();
             });
         })
 
@@ -105,6 +97,7 @@
         QLinks.forEach((QLink) => {
             QLink.addEventListener("mouseenter", (event) => {
                 QLink.style.backgroundColor = "#f2f4f6";
+                console.log("QLink");
             });
             QLink.addEventListener("mouseleave", (event) => {
                 QLink.style.backgroundColor = "white";
