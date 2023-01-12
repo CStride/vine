@@ -1,18 +1,17 @@
 // const basePath = "./data"
 
-import QLinks from "/data/QLinks.json" assert { type: 'JSON' };
-import { getQLinkNode } from "/components/QLinkFunc.js"
+// import QLinks from "/data/QLinks.json";
+import { QLInks } from "./mockdata.js"
+import { getQLinkNode } from "../components/QLinkFunc.js"
 
 function initializeData() {
-    const str = JSON.stringify(QLinks);
-    const linkList = JSON.parse(str);
     
     const node_QLinkList = document.getElementById("QLink-List");
 
     const node_addshortcut = document.getElementById("addshortcut");
 
-    linkList.forEach((link) => {
-        const newNode = getQLinkNode(link.title, link.url, link.url + "/favicon.ico");
+    QLInks.forEach((link) => {
+        const newNode = getQLinkNode(link);
         node_QLinkList.insertBefore(newNode, node_addshortcut);
     });
 }
