@@ -66,6 +66,9 @@
         const nodes_menuItem = document.getElementsByClassName("menuItem");
         const menuItems = Array.from(nodes_menuItem);
         menuItems.forEach((menuItem) => {
+            menuItem.addEventListener("mouseover", (event) => {
+                event.stopPropagation();
+            });
             menuItem.addEventListener("mouseenter", (event) => {
                 event.stopPropagation();
                 menuItem.style.backgroundColor = "#2E94B9";
