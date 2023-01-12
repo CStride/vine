@@ -11,7 +11,7 @@ const getQLinkNode = function ({title, url, icon}) {
     node_edit.setAttribute("class", "edit");
     node_edit.innerText = "Edit shortcut";
     const node_remove = document.createElement("button");
-    node_remove = document.setAttribute("class", "menuItem");
+    node_remove.setAttribute("class", "menuItem");
     node_remove.setAttribute("class", "remove");
     node_remove.innerText = "Remove";
     node_menu.appendChild(node_edit);
