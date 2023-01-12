@@ -85,6 +85,21 @@
             });
         });
 
+        const nodes_menuContainer = document.getElementsByClassName("menuContainer");
+        const menuContainers = Array.from(nodes_menuContainer);
+        menuContainers.forEach((menuContainer) => {
+            menuContainer.addEventListener("mouseenter", (event) => {
+                event.cancelBubble = true;
+                event.preventDefault();
+                event.stopPropagation();
+            });
+            menuContainer.addEventListener("mouseleave", (event) => {
+                event.cancelBubble = true;
+                event.preventDefault();
+                event.stopPropagation();
+            });
+        })
+
         const nodes_QLink = document.getElementsByClassName("QLink");
         const QLinks = Array.from(nodes_QLink);
         QLinks.forEach((QLink) => {
