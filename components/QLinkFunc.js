@@ -7,12 +7,10 @@ const getQLinkNode = function ({title, url, icon}) {
     const node_menu = document.createElement("div");
     node_menu.setAttribute("class", "menuContainer");
     const node_edit = document.createElement("button");
-    node_edit.setAttribute("class", "menuItem");
-    node_edit.setAttribute("class", "edit");
+    node_edit.setAttribute("class", "menuItem edit");
     node_edit.innerText = "Edit shortcut";
     const node_remove = document.createElement("button");
-    node_remove.setAttribute("class", "menuItem");
-    node_remove.setAttribute("class", "remove");
+    node_remove.setAttribute("class", "menuItem remove");
     node_remove.innerText = "Remove";
     node_menu.appendChild(node_edit);
     node_menu.appendChild(node_remove);
