@@ -64,8 +64,8 @@
         node_dialogdone.addEventListener("click", addShortcut);
 
         const nodes_menuItem = document.getElementsByClassName("menuItem");
-        console.log(nodes_menuItem);
-        nodes_menuItem.forEach((menuItem) => {
+        const menuItems = Array.from(nodes_menuItem);
+        menuItems.forEach((menuItem) => {
             menuItem.addEventListener("mouseenter", (event) => {
                 event.stopPropagation();
                 menuItem.display.backgroundColor = "#2E94B9";
