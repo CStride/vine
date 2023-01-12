@@ -72,7 +72,6 @@
             menuItem.addEventListener("mouseenter", (event) => {
                 event.stopPropagation();
                 menuItem.style.backgroundColor = "#2E94B9";
-                console.log("menuItem");
             });
             menuItem.addEventListener("mouseleave", (event) => {
                 event.stopPropagation();
@@ -96,8 +95,8 @@
         const QLinks = Array.from(nodes_QLink);
         QLinks.forEach((QLink) => {
             QLink.addEventListener("mouseenter", (event) => {
+                console.log(event.target);
                 QLink.style.backgroundColor = "#f2f4f6";
-                console.log("QLink");
             });
             QLink.addEventListener("mouseleave", (event) => {
                 QLink.style.backgroundColor = "white";
