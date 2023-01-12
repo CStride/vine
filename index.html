@@ -63,6 +63,17 @@
         const node_dialogdone = document.querySelector("#dialog-done");
         node_dialogdone.addEventListener("click", addShortcut);
 
+        const nodes_QLink = document.getElementsByClassName("QLink");
+        const QLinks = Array.from(nodes_QLink);
+        QLinks.forEach((QLink) => {
+            QLink.addEventListener("mouseenter", (event) => {
+                QLink.style.backgroundColor = "#f2f4f6";
+            });
+            QLink.addEventListener("mouseleave", (event) => {
+                QLink.style.backgroundColor = "white";
+            });
+        })
+
         const nodes_menuItem = document.getElementsByClassName("menuItem");
         const menuItems = Array.from(nodes_menuItem);
         menuItems.forEach((menuItem) => {
@@ -77,6 +88,10 @@
                 event.stopPropagation();
                 menuItem.style.backgroundColor = "white";
             })
+
+            menuItem.addEventListener("click", (event) => {
+                event.preventDefault();
+            });
         });
         // ADDSHORTCUT.addEventListener("blur", closeAddShortcutDialog);
 
