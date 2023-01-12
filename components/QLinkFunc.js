@@ -1,8 +1,8 @@
-const getQLinkNode = function ({title, link, icon}) {
+const getQLinkNode = function ({title, url, icon}) {
     const node_QLink = document.createElement("a");
     node_QLink.setAttribute("class", "QLink");
     node_QLink.setAttribute("title", title);
-    node_QLink.setAttribute("href", link);
+    node_QLink.setAttribute("href", url);
 
     const node_actionMenu = document.createElement("button");
     node_actionMenu.setAttribute("class", "action-menu");
