@@ -4,6 +4,19 @@ const getQLinkNode = function ({title, url, icon}) {
     node_QLink.setAttribute("title", title);
     node_QLink.setAttribute("href", url);
 
+    const node_menu = document.createElement("div");
+    node_menu.setAttribute("class", "menuContainer");
+    const node_edit = document.createElement("button");
+    node_edit.setAttribute("class", "menuItem");
+    node_edit.setAttribute("class", "edit");
+    node_edit.innerText = "Edit shortcut";
+    const node_remove = document.createElement("button");
+    node_remove = document.setAttribute("class", "menuItem");
+    node_remove.setAttribute("class", "remove");
+    node_remove.innerText = "Remove";
+    node_menu.appendChild(node_edit);
+    node_menu.appendChild(node_remove);
+
     const node_actionMenu = document.createElement("button");
     node_actionMenu.setAttribute("class", "action-menu");
 
@@ -22,6 +35,7 @@ const getQLinkNode = function ({title, url, icon}) {
     node_titleContainer.appendChild(node_title);
 
     node_QLink.appendChild(node_actionMenu);
+    node_QLink.appendChild(node_menu);
     node_QLink.appendChild(node_iconContainer);
     node_QLink.appendChild(node_titleContainer);
 
