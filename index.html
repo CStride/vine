@@ -63,6 +63,17 @@
         const node_dialogdone = document.querySelector("#dialog-done");
         node_dialogdone.addEventListener("click", addShortcut);
 
+        const nodes_menuItem = document.getElementsByClassName("menuItem");
+        nodes_menuItem.forEach((menuItem) => {
+            menuItem.addEventListener("mouseenter", (event) => {
+                event.stopPropagation();
+                menuItem.display.backgroundColor = "#2E94B9";
+            });
+            menuItem.addEventListener("mouseleave", (event) => {
+                event.stopPropagation();
+                menuItem.display.backgroundColor = "white";
+            })
+        });
         // ADDSHORTCUT.addEventListener("blur", closeAddShortcutDialog);
 
 
