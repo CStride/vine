@@ -25,6 +25,10 @@
     background-color: white;
 
 }
+#QLink-List > .QLink:hover, #addshortcut:hover {
+    background-color: #f2f4f6;
+}
+
 #QLink-List > .QLink > .actionmenu-toggle {
     position: absolute;
     top: 5px;
@@ -40,8 +44,9 @@
     background-repeat: no-repeat;
     background-size: 60%;
 }
-#QLink-List > .QLink, #addshortcut:hover {
-    background-color: #f2f4f6;
+
+#QLink-List > .QLink > .actionmenu-toggle:hover {
+    background-color: #525252;
 }
 
 #QLink-List > #actionmemu {
