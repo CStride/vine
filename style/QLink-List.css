@@ -1,5 +1,6 @@
 :root {
     --backgroundColor--: white;
+    --maskcolor--: var(--backgroundColor--);
 }
 
 #QLink-List {
@@ -22,7 +23,7 @@
 
     width: 100px;
     height: 100px;
-    margin: 0 5 px;
+    margin: 0 5px;
     border-radius: 3px;
     border: transparent solid 1px;
 
@@ -31,10 +32,11 @@
 }
 #QLink-List > .QLink:hover, #addshortcut:hover {
     --backgroundColor--: #f2f4f6;
+    --maskcolor--: transparent;
     /* background-color: #f2f4f6; */
 }
 
-#QLink-List > .QLink > .actionmenu-toggle {
+#QLink-List > .QLink > .actionmenu-trigger {
     position: absolute;
     top: 5px;
     right: 5px;
@@ -51,10 +53,18 @@
     background-size: 60%;
 }
 
-#QLink-List > .QLink > .actionmenu-toggle:hover {
-    background-color: #525252;
+#QLink-List > .QLink > .actionmenu-trigger:hover {
+    background-color: #EAEAEA;
 }
 
+#QLink-List > .QLink > .actionmenu-trigger > mask{
+    width: 100%;
+    height: 100%;
+    
+    background-color: var(--maskcolor--);
+
+    transition: background-color 1s ease-in 0.5s;
+}
 #QLink-List > #actionmemu {
     display: none;
     position: absolute;
@@ -75,7 +85,7 @@
     background-color: white;
 }
 #QLink-List > #actionmemu > .menu-item:hover {
-    background-color: aquamarine;
+    background-color: #f9ca79;
 }
 
 #QLink-List .iconContainer {

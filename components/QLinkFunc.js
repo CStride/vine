@@ -5,7 +5,10 @@ const getQLinkNode = function ({title, url, icon}) {
     node_QLink.setAttribute("href", url);
 
     const node_actionMenu = document.createElement("button");
-    node_actionMenu.setAttribute("class", "actionmenu-toggle");
+    node_actionMenu.setAttribute("class", "actionmenu-trigger");
+    const node_mask = document.createElement("div");
+    node_mask.setAttribute("class", "mask");
+    node_actionMenu.appendChild(node_mask);
 
     const node_iconContainer = document.createElement("div");
     node_iconContainer.setAttribute("class", "iconContainer");
