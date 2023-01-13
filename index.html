@@ -71,7 +71,8 @@
         })
 
         const node_actionmemu = document.getElementById("actionmenu");
-        node_actionmemu.addEventListener("blur", closeActionmenu);
+        // node_actionmemu.addEventListener("blur", closeActionmenu);
+        node_actionmemu.onblur = closeActionmenu;
 
         const node_addshortcut = document.querySelector("#addshortcut");
         node_addshortcut.addEventListener("click", openAddShortcutDialog);
