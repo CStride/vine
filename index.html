@@ -67,6 +67,7 @@
         const menuItems = Array.from(nodes_menuItem);
         menuItems.forEach((menuItem) => {
             menuItem.addEventListener("mouseover", (event) => {
+                console.log("menuItem")
                 event.stopPropagation();
             });
             menuItem.addEventListener("mouseenter", (event) => {
@@ -94,6 +95,10 @@
         const nodes_QLink = document.getElementsByClassName("QLink");
         const QLinks = Array.from(nodes_QLink);
         QLinks.forEach((QLink) => {
+            QLink.addEventListener("mouseover", (event) => {
+                console.log("QLink")
+                event.stopPropagation();
+            });
             QLink.addEventListener("mouseenter", (event) => {
                 console.log(event.target);
                 QLink.style.backgroundColor = "#f2f4f6";
