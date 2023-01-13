@@ -127,8 +127,11 @@
             const absoluteX_QL = QLink_List.offsetLeft;
             const absoluteY_QL = QLink_List.offsetTop;
 
-            const top = absoluteX_toggle - absoluteX_QL;
-            const left = absoluteY_toggle - absoluteY_QL;
+            console.log(toggle);
+            console.log(QLink_List);
+
+            const top = absoluteY_toggle - absoluteY_QL;
+            const left = absoluteX_toggle - absoluteX_QL;
 
             const actionmemu = document.getElementById("actionmemu");
             actionmemu.style.top = top + "px";
