@@ -128,7 +128,8 @@
             console.log(QLink.offsetLeft, QLink.offsetTop);
 
             const actionmemu = document.getElementById("actionmemu");
-            actionmemu.style.top = (relativeY - (actionmemu.offsetHeight - QLink.offsetHeight) / 2) + "px";
+            console.log(actionmemu.offsetWidth, QLink.offsetWidth);
+            actionmemu.style.top = relativeY + "px";
             actionmemu.style.left = (relativeX - (actionmemu.offsetWidth - QLink.offsetWidth) / 2) + "px";
             actionmemu.style.display = "block";
             // console.log(event)
