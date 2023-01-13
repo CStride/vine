@@ -68,7 +68,7 @@
         const actionmenuToggles = Array.from(nodes_actionmenuToggle);
         actionmenuToggles.forEach((actionmenuToggle) => {
             actionmenuToggle.addEventListener("click", openActionmenu);
-            actionmenuToggle.addEventListener("blur", closeActionmenu);
+            // actionmenuToggle.addEventListener("blur", closeActionmenu);
         })
 
         const node_addshortcut = document.querySelector("#addshortcut");
@@ -128,8 +128,8 @@
             console.log(QLink.offsetLeft, QLink.offsetTop);
 
             const actionmemu = document.getElementById("actionmemu");
-            actionmemu.style.top = relativeY + "px";
-            actionmemu.style.left = relativeX + "px";
+            actionmemu.style.top = (relativeY - (actionmemu.offsetHeight - QLink.offsetHeight) / 2) + "px";
+            actionmemu.style.left = (relativeX - (actionmemu.offsetWidth - QLink.offsetWidth) / 2) + "px";
             actionmemu.style.display = "block";
             // console.log(event)
         }
