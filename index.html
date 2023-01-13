@@ -68,7 +68,7 @@
         const actionmenuToggles = Array.from(nodes_actionmenuToggle);
         actionmenuToggles.forEach((actionmenuToggle) => {
             actionmenuToggle.addEventListener("click", openActionmenu);
-            // actionmenuToggle.addEventListener("blur", closeActionmenu);
+            actionmenuToggle.addEventListener("blur", closeActionmenu);
         })
 
         const node_addshortcut = document.querySelector("#addshortcut");

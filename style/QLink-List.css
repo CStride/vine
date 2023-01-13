@@ -57,7 +57,7 @@
     background-color: #EAEAEA;
 }
 
-#QLink-List > .QLink > .actionmenu-trigger > mask{
+#QLink-List > .QLink > .actionmenu-trigger > .mask{
     width: 100%;
     height: 100%;
     
