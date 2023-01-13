@@ -64,12 +64,14 @@
 
 
         // set listeners
-        const nodes_actionmenuToggle = document.getElementsByClassName("actionmenu-trigger");
-        const actionmenuToggles = Array.from(nodes_actionmenuToggle);
-        actionmenuToggles.forEach((actionmenuToggle) => {
-            actionmenuToggle.addEventListener("click", openActionmenu);
-            actionmenuToggle.addEventListener("blur", closeActionmenu);
+        const nodes_actionmenuTrigger = document.getElementsByClassName("actionmenu-trigger");
+        const actionmenuTriggers = Array.from(nodes_actionmenuTrigger);
+        actionmenuTriggers.forEach((actionmenuTrigger) => {
+            actionmenuTrigger.addEventListener("click", openActionmenu);
         })
+
+        const node_actionmemu = document.getElementById("actionmemu");
+        node_actionmemu.addEventListener("blur", closeActionmenu);
 
         const node_addshortcut = document.querySelector("#addshortcut");
         node_addshortcut.addEventListener("click", openAddShortcutDialog);
