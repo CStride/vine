@@ -129,9 +129,11 @@
 
             const actionmemu = document.getElementById("actionmemu");
             console.log(actionmemu.offsetWidth, QLink.offsetWidth);
+
+            actionmemu.style.display = "block";
             actionmemu.style.top = relativeY + "px";
             actionmemu.style.left = (relativeX - (actionmemu.offsetWidth - QLink.offsetWidth) / 2) + "px";
-            actionmemu.style.display = "block";
+            
             // console.log(event)
         }
 
