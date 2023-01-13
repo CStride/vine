@@ -120,23 +120,16 @@
             event.preventDefault();
 
             const toggle = event.target;
-            const absoluteX_toggle = toggle.offsetLeft;
-            const absoluteY_toggle = toggle.offsetTop;
+            const QLink = toggle.parentNode;
+            const relativeX = QLink.offsetLeft;
+            const relativeY = QLink.offsetTop;
 
-            const QLink_List = document.getElementById("QLink-List");
-            const absoluteX_QL = QLink_List.offsetLeft;
-            const absoluteY_QL = QLink_List.offsetTop;
-
-            console.log(toggle);
-            console.log(QLink_List);
-
-            const top = absoluteY_toggle - absoluteY_QL;
-            const left = absoluteX_toggle - absoluteX_QL;
+            console.log(QLink);
 
             const actionmemu = document.getElementById("actionmemu");
-            actionmemu.style.top = top + "px";
-            actionmemu.style.left = left + "px";
-            console.log(event)
+            actionmemu.style.top = relativeY;
+            actionmemu.style.left = relativeX;
+            // console.log(event)
         }
     </script>
 </body>
