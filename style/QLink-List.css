@@ -49,7 +49,7 @@
     top: 0;
     left: 50%;
     transform: translateX(-50%);
-    z-index: 3;
+    /* z-index: 3; */
 
     width: 112px;
     height: 80px;
