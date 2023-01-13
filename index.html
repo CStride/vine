@@ -19,7 +19,21 @@
                 <input id="input-box" type="text" placeholder="Search or type a URL"/>
                 <img id="icon-searching" class="icon" src="./assets/searching.png"/>
             </div>
-            <div id="QLink-List"></div>
+            <div id="QLink-List">
+                <button id="addshortcut" title="add shortcut">
+                    <div class="iconContainer">
+                        <img id="icon-addshortcut" src="./assets/addshortcut.png"/>
+                    </div>
+                    <div class="titleContainer">
+                        <span>addshortcut</span>
+                    </div>
+                </button>
+
+                <div id="actionmemu">
+                    <button class="menu-item edit">Edit</button>
+                    <button class="menu-item remove">Remove</button>
+                </div>
+            </div>
         </div>
     </div>
     <div id="addshortcut-dialog">
@@ -41,20 +55,18 @@
     </div>
     <div id="overlay"></div>
     <script type="module">
-        import { ADDSHORTCUT} from "./components/QLinkFunc.js"
         import { initializeData } from "./data/initData.js"
 
         // initialize dom
-        const node_QLinkList = document.querySelector("#QLink-List");
-        node_QLinkList.appendChild(ADDSHORTCUT);
-
-        ADDSHORTCUT.addEventListener("click", openAddShortcutDialog);
 
         // initialize data
         initializeData();
 
 
         // set listeners
+        const node_addshortcut = document.querySelector("#addshortcut");
+        node_addshortcut.addEventListener("click", openAddShortcutDialog);
+
         const node_dialogcancle = document.querySelector("#dialog-cancle");
         const node_overlay = document.querySelector("#overlay");
         node_dialogcancle.addEventListener("click", closeAddShortcutDialog);
@@ -63,52 +75,7 @@
         const node_dialogdone = document.querySelector("#dialog-done");
         node_dialogdone.addEventListener("click", addShortcut);
 
-        const nodes_menuItem = document.getElementsByClassName("menuItem");
-        const menuItems = Array.from(nodes_menuItem);
-        menuItems.forEach((menuItem) => {
-            menuItem.addEventListener("mouseover", (event) => {
-                console.log("menuItem")
-                event.stopPropagation();
-            });
-            menuItem.addEventListener("mouseenter", (event) => {
-                event.stopPropagation();
-                menuItem.style.backgroundColor = "#2E94B9";
-            });
-            menuItem.addEventListener("mouseleave", (event) => {
-                event.stopPropagation();
-                menuItem.style.backgroundColor = "white";
-            })
-
-            menuItem.addEventListener("click", (event) => {
-                event.preventDefault();
-            });
-        });
-
-        const nodes_menuContainer = document.getElementsByClassName("menuContainer");
-        const menuContainers = Array.from(nodes_menuContainer);
-        menuContainers.forEach((menuContainer) => {
-            menuContainer.addEventListener("click", (event) => {
-                event.preventDefault();
-            });
-        })
-
-        const nodes_QLink = document.getElementsByClassName("QLink");
-        const QLinks = Array.from(nodes_QLink);
-        QLinks.forEach((QLink) => {
-            QLink.addEventListener("mouseover", (event) => {
-                console.log("QLink")
-                event.stopPropagation();
-            });
-            QLink.addEventListener("mouseenter", (event) => {
-                console.log(event.target);
-                QLink.style.backgroundColor = "#f2f4f6";
-            });
-            QLink.addEventListener("mouseleave", (event) => {
-                QLink.style.backgroundColor = "white";
-            });
-        })
         // ADDSHORTCUT.addEventListener("blur", closeAddShortcutDialog);
-
 
         // functions
         function openAddShortcutDialog() {
