@@ -29,7 +29,7 @@
                     </div>
                 </button>
 
-                <div id="actionmemu">
+                <div id="actionmenu">
                     <button class="menu-item edit">Edit</button>
                     <button class="menu-item remove">Remove</button>
                 </div>
@@ -70,7 +70,7 @@
             actionmenuTrigger.addEventListener("click", openActionmenu);
         })
 
-        const node_actionmemu = document.getElementById("actionmemu");
+        const node_actionmemu = document.getElementById("actionmenu");
         node_actionmemu.addEventListener("blur", closeActionmenu);
 
         const node_addshortcut = document.querySelector("#addshortcut");
@@ -129,7 +129,7 @@
             const relativeY = QLink.offsetTop;
 
 
-            const actionmemu = document.getElementById("actionmemu");
+            const actionmemu = document.getElementById("actionmenu");
             actionmemu.style.display = "block";
             actionmemu.style.top = relativeY + "px";
             actionmemu.style.left = (relativeX - (actionmemu.offsetWidth - QLink.offsetWidth) / 2) + "px";
