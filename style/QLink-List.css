@@ -59,7 +59,7 @@
     background-color: #EAEAEA;
 }
 
-#QLink-List > #actionmenu {
+#QLink-List > #actionmenu-dialog {
     display: none;
     position: absolute;
     z-index: 1;
