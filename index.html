@@ -90,7 +90,7 @@
             actionmenuTrigger.addEventListener("click", (event) => {
                 event.stopPropagation();
                 event.preventDefault();
-                openActionmenu();
+                openActionmenu(event);
             });
         })        
 
@@ -101,7 +101,7 @@
         });
 
         const node_dialogcancle = document.querySelector("#dialog-cancle");
-        node_dialogcancle.addEventListener("click", (evnet) => {
+        node_dialogcancle.addEventListener("click", (event) => {
             closeAddShortcutDialog();
         });
 
@@ -139,9 +139,9 @@
         }
 
         function openActionmenu(event) {
-
-            const toggle = event.target;
-            const QLink = toggle.parentNode;
+            // event.target => node(#actionmenu-trigger)
+            const trigger = event.target;
+            const QLink = trigger.parentNode;
             const relativeX = QLink.offsetLeft;
             const relativeY = QLink.offsetTop;
 
