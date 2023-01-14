@@ -29,10 +29,9 @@
                     </div>
                 </button>
 
-                <div id="actionmenu-dialog" class="dialog" style="transform: none; left: 100px; top: 100px;">
+                <div id="actionmenu-dialog" class="dialog">
                     <button class="menu-item edit">Edit</button>
                     <button class="menu-item remove">Remove</button>
-                    <div class="overlay"></div>
                 </div>
             </div>
         </div>
@@ -54,7 +53,6 @@
             <button id="dialog-cancle">Cancle</button>
         </div>
     </div>
-    <div id="overlay"></div>
     <script type="module">
         import { initializeData } from "./data/initData.js"
         import { Dialog } from "./data/classes.js"
@@ -65,17 +63,25 @@
         initializeData();
 
         const dialogs = [];
-
         const dialog_addshortcut = document.getElementById("addshortcut-dialog");
-        dialogs.push(new Dialog("addshortcut-dialog", dialog_addshortcut, 
-        openAddShortcutDialog, closeAddShortcutDialog));
-
+        dialogs.push(new Dialog("addshortcut-dialog", dialog_addshortcut, openAddShortcutDialog, closeAddShortcutDialog));
         const dialog_actionmenu = document.getElementById("actionmenu-dialog");
-        dialogs.push(new Dialog("actionmenu-dialog", dialog_actionmenu, 
-        openActionmenu, closeActionmenu));
-
+        dialogs.push(new Dialog("actionmenu-dialog", dialog_actionmenu, openActionmenu, closeActionmenu));
 
         // set listeners
+        const node_body = document.body;
+        node_body.addEventListener("click", (event) => {
+            const target = event.target;
+
+            if (!target.hasClass("dialog")) {
+                dialogs.forEach((dialog) => {
+                    if (dialog.isOpen()) {
+                        dialog.close(dialog.node)
+                    }
+                })
+            }
+        });
+
         const nodes_actionmenuTrigger = document.getElementsByClassName("actionmenu-trigger");
         const actionmenuTriggers = Array.from(nodes_actionmenuTrigger);
         actionmenuTriggers.forEach((actionmenuTrigger) => {
@@ -94,38 +100,16 @@
         const node_dialogcancle = document.querySelector("#dialog-cancle");
         node_dialogcancle.addEventListener("click", (evnet) => {
             closeAddShortcutDialog();
-            closeOverlay();
         });
 
         const node_dialogdone = document.querySelector("#dialog-done");
         node_dialogdone.addEventListener("click", (event) => {
             addShortcut();
             closeAddShortcutDialog();
-            closeOverlay();
-        });
-
-        const node_overlay = document.getElementById("overlay");
-        node_overlay.addEventListener("click", (event) => {
-            closeOverlay();
-            dialogs.forEach((dialog) => {
-                if (dialog.isOpen()) {
-                    dialog.close(dialog.node);
-                }
-            })
         });
         // ADDSHORTCUT.addEventListener("blur", closeAddShortcutDialog);
 
         // functions
-        function openOverlay() {
-            const overlay = document.getElementById("overlay");
-            overlay.style.display = "block";
-        }
-
-        function closeOverlay() {
-            const overlay = document.getElementById("overlay");
-            overlay.style.display = "none";
-        }
-
         function openAddShortcutDialog() {
             const dialog = document.getElementById("addshortcut-dialog");
 
