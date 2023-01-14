@@ -62,6 +62,7 @@
 #QLink-List > #actionmenu {
     display: none;
     position: absolute;
+    z-index: 1;
 
     width: 112px;
     height: 80px;

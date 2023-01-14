@@ -3,7 +3,7 @@
 
     width: 540px;
     position: absolute;
-    z-index: 3;
+    z-index: 1;
     top: 190px;
     left: 50%;
     transform: translateX(-50%);
