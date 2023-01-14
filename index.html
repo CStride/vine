@@ -114,7 +114,6 @@
             if (node.tagName.toLowerCase() == "body") return false;
 
             const classList = node.classList;
-            console.log(node);
             if (classList.contains("dialog")) return true;
             else {
                 return isInDialog(node.parentNode);
