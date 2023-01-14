@@ -111,7 +111,7 @@
 
         // functions
         function isInDialog(node) {
-            if (node.tagName == "body") return false;
+            if (node.tagName.toLowerCase() == "body") return false;
 
             const classList = node.classList;
             console.log(node);
