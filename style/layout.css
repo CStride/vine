@@ -20,12 +20,9 @@
     border-style: solid;
     border-color: transparent;
 
-    display: flex;
-    justify-content: center;
 }
 
-/* #center > * {
+#center > * {
     position: relative;
-    left: 50%;
-    transform: translateX(-50%);
-} */
+    align-self: center;
+}
