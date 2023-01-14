@@ -75,12 +75,14 @@
             const classList = target.classList;
 
 
-            if (!classList.contains("dialogs")) {
+            if (!classList.contains("dialog")) {
                 dialogs.forEach((dialog) => {
                     if (dialog.isOpen()) {
                         dialog.close(dialog.node)
                     }
                 })
+            } else {
+                console.log("is dialog")
             }
         });
 
@@ -111,6 +113,7 @@
 
         // functions
         function openAddShortcutDialog() {
+            console.log("add shortcut")
             const dialog = document.getElementById("addshortcut-dialog");
 
             dialog.style.display = "block";
@@ -136,7 +139,7 @@
             const url = input_url.value;
         }
 
-        function openActionmenu() {
+        function openActionmenu(event) {
             event.preventDefault();
             event.stopPropagation();
 
