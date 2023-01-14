@@ -72,10 +72,8 @@
         const node_body = document.body;
         node_body.addEventListener("click", (event) => {
             const target = event.target;
-            const classList = target.classList;
 
-
-            if (!classList.contains("dialog")) {
+            if (!isInDialog(target)) {
                 dialogs.forEach((dialog) => {
                     if (dialog.isOpen()) {
                         dialog.close(dialog.node)
