@@ -71,14 +71,14 @@
     box-shadow: 0 2px 5px grey;
 }
 
-#QLink-List > #actionmenu > .menu-item {
+#QLink-List > #actionmenu-dialog > .menu-item {
     width: 100%;
     height: 32px;
     border: 0;
 
     background-color: white;
 }
-#QLink-List > #actionmenu > .menu-item:hover {
+#QLink-List > #actionmenu-dialog > .menu-item:hover {
     background-color: #f9ca79;
 }
 

@@ -29,14 +29,14 @@
                     </div>
                 </button>
 
-                <div id="actionmenu">
+                <div id="actionmenu-dialog" class="dialog">
                     <button class="menu-item edit">Edit</button>
                     <button class="menu-item remove">Remove</button>
                 </div>
             </div>
         </div>
     </div>
-    <div id="addshortcut-dialog">
+    <div id="addshortcut-dialog" class="dialog">
         <span>Add shortcut</span>
         <div id="dialogItem-container">
             <div class="dialog-item">
@@ -56,49 +56,83 @@
     <div id="overlay"></div>
     <script type="module">
         import { initializeData } from "./data/initData.js"
+        import { Dialog } from "./data/classes.js"
 
         // initialize dom
 
         // initialize data
         initializeData();
 
+        const dialogs = [];
+
+        const dialog_addshortcut = document.getElementById("addshortcut-dialog");
+        dialogs.push(new Dialog("addshortcut-dialog", dialog_addshortcut, 
+        openAddShortcutDialog, closeAddShortcutDialog));
+
+        const dialog_actionmenu = document.getElementById("actionmenu-dialog");
+        dialogs.push(new Dialog("actionmenu-dialog", dialog_actionmenu, 
+        openActionmenu, closeActionmenu));
+
 
         // set listeners
         const nodes_actionmenuTrigger = document.getElementsByClassName("actionmenu-trigger");
         const actionmenuTriggers = Array.from(nodes_actionmenuTrigger);
         actionmenuTriggers.forEach((actionmenuTrigger) => {
-            actionmenuTrigger.addEventListener("click", openActionmenu);
-        })
-
-        const node_actionmemu = document.getElementById("actionmenu");
-        // node_actionmemu.addEventListener("blur", closeActionmenu);
-        node_actionmemu.onblur = closeActionmenu;
+            actionmenuTrigger.addEventListener("click", (event) => {
+                openActionmenu();
+                openOverlay();
+            });
+        })        
 
         const node_addshortcut = document.querySelector("#addshortcut");
-        node_addshortcut.addEventListener("click", openAddShortcutDialog);
+        node_addshortcut.addEventListener("click", (event) => {
+            openAddShortcutDialog();
+            openOverlay();
+        });
 
         const node_dialogcancle = document.querySelector("#dialog-cancle");
-        const node_overlay = document.querySelector("#overlay");
-        node_dialogcancle.addEventListener("click", closeAddShortcutDialog);
-        node_overlay.addEventListener("click", closeAddShortcutDialog);
+        node_dialogcancle.addEventListener("click", (evnet) => {
+            closeAddShortcutDialog();
+            closeOverlay();
+        });
 
         const node_dialogdone = document.querySelector("#dialog-done");
-        node_dialogdone.addEventListener("click", addShortcut);
+        node_dialogdone.addEventListener("click", (event) => {
+            addShortcut();
+            closeAddShortcutDialog();
+            closeOverlay();
+        });
 
+        const node_overlay = document.getElementById("overlay");
+        node_overlay.addEventListener("click", (event) => {
+            closeOverlay();
+            dialogs.forEach((dialog) => {
+                if (dialog.isOpen()) {
+                    dialog.close(dialog.node);
+                }
+            })
+        });
         // ADDSHORTCUT.addEventListener("blur", closeAddShortcutDialog);
 
         // functions
-        function openAddShortcutDialog() {
-            const dialog = document.getElementById("addshortcut-dialog");
+        function openOverlay() {
             const overlay = document.getElementById("overlay");
-
-            dialog.style.display = "block";
             overlay.style.display = "block";
         }
 
-        function closeAddShortcutDialog() {
-            const dialog = document.getElementById("addshortcut-dialog");
+        function closeOverlay() {
             const overlay = document.getElementById("overlay");
+            overlay.style.display = "none";
+        }
+
+        function openAddShortcutDialog() {
+            const dialog = document.getElementById("addshortcut-dialog");
+
+            dialog.style.display = "block";
+        }
+
+        function closeAddShortcutDialog(node) {
+            let dialog = node || document.getElementById("addshortcut-dialog");
 
             const input_name = document.getElementById("dialogInput-name");
             const input_url = document.getElementById("dialogInput-url");
@@ -106,8 +140,8 @@
             input_url.value = "";
 
             dialog.style.display = "none";
-            overlay.style.display = "none";
         }
+
 
         function addShortcut() {
             const input_name = document.getElementById("dialogInput-name");
@@ -115,12 +149,9 @@
 
             const name = input_name.value;
             const url = input_url.value;
-
-            console.log(name, url);
-            closeAddShortcutDialog();
         }
 
-        function openActionmenu(event) {
+        function openActionmenu() {
             event.preventDefault();
             event.stopPropagation();
 
@@ -129,20 +160,15 @@
             const relativeX = QLink.offsetLeft;
             const relativeY = QLink.offsetTop;
 
-
-            const actionmemu = document.getElementById("actionmenu");
+            const actionmemu = document.getElementById("actionmenu-dialog");
             actionmemu.style.display = "block";
             actionmemu.style.top = relativeY + "px";
             actionmemu.style.left = (relativeX - (actionmemu.offsetWidth - QLink.offsetWidth) / 2) + "px";
-            
-            // console.log(event)
         }
 
-        function closeActionmenu() {
-            const actionmemu = document.getElementById("actionmenu");
-            console.log(actionmemu)
+        function closeActionmenu(node) {
+            let actionmemu = node || document.getElementById("actionmenu-dialog");
             actionmemu.style.display = "none";
-            console.log(actionmemu.style.display)
         }
     </script>
 </body>
