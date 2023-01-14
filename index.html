@@ -91,24 +91,26 @@
         const actionmenuTriggers = Array.from(nodes_actionmenuTrigger);
         actionmenuTriggers.forEach((actionmenuTrigger) => {
             actionmenuTrigger.addEventListener("click", (event) => {
+                event.stopPropagation();
                 openActionmenu(event);
             });
         })        
 
         const node_addshortcut = document.querySelector("#addshortcut");
         node_addshortcut.addEventListener("click", (event) => {
-            openAddShortcutDialog();
+            event.stopPropagation();
+            openAddShortcutDialog(event);
         });
 
         const node_dialogcancle = document.querySelector("#dialog-cancle");
         node_dialogcancle.addEventListener("click", (evnet) => {
-            closeAddShortcutDialog();
+            closeAddShortcutDialog(event);
         });
 
         const node_dialogdone = document.querySelector("#dialog-done");
         node_dialogdone.addEventListener("click", (event) => {
             addShortcut();
-            closeAddShortcutDialog();
+            closeAddShortcutDialog(event);
         });
         // ADDSHORTCUT.addEventListener("blur", closeAddShortcutDialog);
 
