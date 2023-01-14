@@ -78,6 +78,7 @@
             if (!classList.contains("dialog")) {
                 dialogs.forEach((dialog) => {
                     if (dialog.isOpen()) {
+                        console.log("global")
                         dialog.close(dialog.node)
                     }
                 })
@@ -90,7 +91,7 @@
         const actionmenuTriggers = Array.from(nodes_actionmenuTrigger);
         actionmenuTriggers.forEach((actionmenuTrigger) => {
             actionmenuTrigger.addEventListener("click", (event) => {
-                openActionmenu();
+                openActionmenu(event);
             });
         })        
 
