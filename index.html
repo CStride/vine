@@ -112,6 +112,16 @@
         });
 
         // functions
+        function isInDialog(node) {
+            if (node.tagName == "body") return false;
+
+            const classList = node.classList;
+            if (classList.contains("dialog")) return true;
+            else {
+                return isInDialog(node.parentNode);
+            }
+        }
+
         function openAddShortcutDialog() {
             const dialog = document.getElementById("addshortcut-dialog");
 
