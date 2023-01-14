@@ -72,8 +72,10 @@
         const node_body = document.body;
         node_body.addEventListener("click", (event) => {
             const target = event.target;
+            const classList = target.classList;
 
-            if (!target.hasClass("dialog")) {
+
+            if (!classList.contains("dialogs")) {
                 dialogs.forEach((dialog) => {
                     if (dialog.isOpen()) {
                         dialog.close(dialog.node)
@@ -87,14 +89,12 @@
         actionmenuTriggers.forEach((actionmenuTrigger) => {
             actionmenuTrigger.addEventListener("click", (event) => {
                 openActionmenu();
-                openOverlay();
             });
         })        
 
         const node_addshortcut = document.querySelector("#addshortcut");
         node_addshortcut.addEventListener("click", (event) => {
             openAddShortcutDialog();
-            openOverlay();
         });
 
         const node_dialogcancle = document.querySelector("#dialog-cancle");
