@@ -3,7 +3,6 @@
 
     width: 540px;
     position: absolute;
-    z-index: 1;
     top: 190px;
     left: 50%;
     transform: translateX(-50%);
@@ -11,6 +10,7 @@
     background-color: white;
 
     border: transparent solid 1px;
+    box-shadow: 0 2px 5px grey;
     border-radius: 8px;
     margin: 20px 0 0 0;
 }

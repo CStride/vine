@@ -78,12 +78,9 @@
             if (!classList.contains("dialog")) {
                 dialogs.forEach((dialog) => {
                     if (dialog.isOpen()) {
-                        console.log("global")
                         dialog.close(dialog.node)
                     }
                 })
-            } else {
-                console.log("is dialog")
             }
         });
 
@@ -92,31 +89,30 @@
         actionmenuTriggers.forEach((actionmenuTrigger) => {
             actionmenuTrigger.addEventListener("click", (event) => {
                 event.stopPropagation();
-                openActionmenu(event);
+                event.preventDefault();
+                openActionmenu();
             });
         })        
 
         const node_addshortcut = document.querySelector("#addshortcut");
         node_addshortcut.addEventListener("click", (event) => {
             event.stopPropagation();
-            openAddShortcutDialog(event);
+            openAddShortcutDialog();
         });
 
         const node_dialogcancle = document.querySelector("#dialog-cancle");
         node_dialogcancle.addEventListener("click", (evnet) => {
-            closeAddShortcutDialog(event);
+            closeAddShortcutDialog();
         });
 
         const node_dialogdone = document.querySelector("#dialog-done");
         node_dialogdone.addEventListener("click", (event) => {
             addShortcut();
-            closeAddShortcutDialog(event);
+            closeAddShortcutDialog();
         });
-        // ADDSHORTCUT.addEventListener("blur", closeAddShortcutDialog);
 
         // functions
         function openAddShortcutDialog() {
-            console.log("add shortcut")
             const dialog = document.getElementById("addshortcut-dialog");
 
             dialog.style.display = "block";
@@ -143,8 +139,6 @@
         }
 
         function openActionmenu(event) {
-            event.preventDefault();
-            event.stopPropagation();
 
             const toggle = event.target;
             const QLink = toggle.parentNode;
