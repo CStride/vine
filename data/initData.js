@@ -1,7 +1,7 @@
 // const basePath = "./data"
 
 // import QLinks from "/data/QLinks.json";
-import { QLInks } from "./mockdata.js"
+import { QLinks } from "./mockdata.js"
 import { getQLinkNode } from "../components/QLinkFunc.js"
 
 function initializeData() {
@@ -10,7 +10,7 @@ function initializeData() {
 
     const node_addshortcut = document.getElementById("addshortcut");
 
-    QLInks.forEach((link) => {
+    QLinks.forEach((link) => {
         const newNode = getQLinkNode(link);
         node_QLinkList.insertBefore(newNode, node_addshortcut);
     });

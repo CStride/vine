@@ -1,4 +1,4 @@
-class QLInk {
+class QLink {
     constructor(title, url) {
         this.title = title;
         this.url = url;
@@ -18,4 +18,4 @@ class Dialog {
     }
 }
 
-export { QLInk, Dialog };
+export { QLink, Dialog };

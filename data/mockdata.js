@@ -1,10 +1,10 @@
-import { QLInk } from "./classes.js";
+import { QLink } from "./classes.js";
 
-const baidu = new QLInk("baidu", "https://www.baidu.com");
-const bilibili = new QLInk("bilibili", "https://www.bilibili.com");
-const leetcode = new QLInk("leetcode", "https://leetcode.cn/");
+const baidu = new QLink("baidu", "https://www.baidu.com");
+const bilibili = new QLink("bilibili", "https://www.bilibili.com");
+const leetcode = new QLink("leetcode", "https://leetcode.cn/");
 
-const QLInks = [];
-QLInks.push(baidu, bilibili, leetcode);
+const QLinks = [];
+QLinks.push(baidu, bilibili, leetcode);
 
-export { QLInks };
+export { QLinks };
