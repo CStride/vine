@@ -10,7 +10,6 @@ var activeQLink = null;
 const dialog_addshortcut = document.getElementById("addshortcut-dialog");
 function setAddshortcutDialogListeners() {
     dialog_addshortcut.addEventListener("click", (event) => {
-        event.stopPropagation();
         openAddshortcutDialog();
     })
     
@@ -124,7 +123,7 @@ function openEditShortcutDialog(node) {
     input_name.value = name;
     input_url.value = url;
 
-    dialog_addshortcut.style.display = "block";
+    dialog_editshortcut.style.display = "block";
 }
 
 // set editshortcut-dialog's listeners
