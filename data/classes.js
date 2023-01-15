@@ -1,3 +1,11 @@
+class QLInk {
+    constructor(title, url) {
+        this.title = title;
+        this.url = url;
+        this.icon = url + "/favicon.ico"
+    }
+}
+
 class Dialog {
     constructor(name, node, openFunc, closeFunc) {
         this.name = name;
@@ -10,4 +18,4 @@ class Dialog {
     }
 }
 
-export { Dialog };
+export { QLInk, Dialog };

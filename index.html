@@ -55,7 +55,7 @@
     </div>
     <script type="module">
         import { initializeData } from "./data/initData.js"
-        import { Dialog } from "./data/classes.js"
+        import { QLink, Dialog } from "./data/classes.js"
 
         // initialize dom
 
@@ -144,6 +144,12 @@
 
             const name = input_name.value;
             const url = input_url.value;
+
+            const node_QLinkList = document.getElementById("QLink-List");
+            const node_addshortcut = document.getElementById("addshortcut");
+
+            const newNode = new QLink(name, url);
+            node_QLinkList.insertBefore(newNode, node_addshortcut);
         }
 
         function openActionmenu(event) {

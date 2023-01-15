@@ -1,10 +1,4 @@
-class QLInk {
-    constructor(title, url) {
-        this.title = title;
-        this.url = url;
-        this.icon = url + "/favicon.ico"
-    }
-}
+import { QLInk } from "./classes.js";
 
 const baidu = new QLInk("baidu", "https://www.baidu.com");
 const bilibili = new QLInk("bilibili", "https://www.bilibili.com");
