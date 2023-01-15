@@ -55,7 +55,10 @@ function addShortcut() {
     const node_QLinkList = document.getElementById("QLink-List");
     const node_addshortcut = document.getElementById("addshortcut");
 
-    const newNode =  getQLinkNode(new QLink(name, url)); 
+    console.log(name, url);
+    const shortcut = new QLink(name, url);
+    console.log(shortcut);
+    const newNode =  getQLinkNode(shortcut); 
     node_QLinkList.insertBefore(newNode, node_addshortcut);
     return newNode;
 }
@@ -120,6 +123,8 @@ function openEditShortcutDialog(node) {
 
     input_name.value = name;
     input_url.value = url;
+
+    dialog_addshortcut.style.display = "block";
 }
 
 // set editshortcut-dialog's listeners
