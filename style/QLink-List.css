@@ -10,9 +10,7 @@
     margin: 20px 0 0 0;
 
     display: flex;
-}
-#QLink-List > * {
-    float: left;
+    flex-wrap: wrap;
 }
 
 #QLink-List > .QLink, #addshortcut {
