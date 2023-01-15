@@ -1,4 +1,4 @@
-#addshortcut-dialog {
+.shortcut-dialog {
     display: none;
 
     width: 540px;
@@ -16,26 +16,25 @@
     margin: 20px 0 0 0;
 }
 
-#addshortcut-dialog > span {
+.shortcut-dialog > span {
     margin: 10px 0 5px 10px;
 }
-#addshortcut-dialog span {
+.shortcut-dialog span {
     display: block;
 }
 
-
-#addshortcut-dialog > #dialogItem-container {
+.shortcut-dialog > .dialogItem-container {
     margin: 20px 0 2px 10px;
     width: 500px;
     border: transparent solid 1px;
 }
 
-#dialogItem-container > .dialog-item {
+.dialogItem-container > .dialog-item {
     width: 500px;
     margin-bottom: 15px;
 }
 
-#dialogItem-container > .dialog-item > input {
+.dialogItem-container > .dialog-item > input {
     width: 480px;
     height: 28px;
 
@@ -47,17 +46,17 @@
 
     background-color: #f2f4f6;
 }
-#dialogItem-container > .dialog-item > input:focus {
+.dialogItem-container > .dialog-item > input:focus {
     border-bottom-color: #39BAE8;
 }
 
-#addshortcut-dialog > #dialogButton-container {
+.shortcut-dialog > .dialogButton-container {
     width: 500px;
     margin-left: 10px;
     border: transparent solid 1px;
 }
 
-#dialogButton-container > button {
+.dialogButton-container > button {
     width: 84px;
     height: 36px;
     margin: 7px 5px;

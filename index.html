@@ -36,140 +36,51 @@
             </div>
         </div>
     </div>
-    <div id="addshortcut-dialog" class="dialog">
+    <div id="addshortcut-dialog" class="dialog shortcut-dialog">
         <span>Add shortcut</span>
-        <div id="dialogItem-container">
+        <div class="dialogItem-container">
             <div class="dialog-item">
                 <span>Name</span>
-                <input id="dialogInput-name" type="text"/>
+                <input class="dialogInput-name" type="text"/>
             </div>
             <div class="dialog-item">
                 <span>URL</span>
-                <input id="dialogInput-url" type="text"/>
+                <input class="dialogInput-url" type="text"/>
             </div>
         </div>
-        <div id="dialogButton-container">
-            <button id="dialog-done">Done</button>
-            <button id="dialog-cancle">Cancle</button>
+        <div class="dialogButton-container">
+            <button class="dialog-done">Done</button>
+            <button class="dialog-cancle">Cancle</button>
+        </div>
+    </div>
+
+    <div id="editshortcut-dialog" class="dialog shortcut-dialog">
+        <span>Edit shortcut</span>
+        <div class="dialogItem-container">
+            <div class="dialog-item">
+                <span>Name</span>
+                <input class="dialogInput-name" type="text"/>
+            </div>
+            <div class="dialog-item">
+                <span>URL</span>
+                <input class="dialogInput-url" type="text"/>
+            </div>
+        </div>
+        <div class="dialogButton-container">
+            <button class="dialog-done">Done</button>
+            <button class="dialog-cancle">Cancle</button>
         </div>
     </div>
     <script type="module">
         import { initializeData } from "./data/initData.js"
-        import { QLink, Dialog } from "./data/classes.js"
-        import { getQLinkNode } from "./components/QLinkFunc.js"
+        import { setListeners } from "./data/setListeners.js"
 
         // initialize dom
 
         // initialize data
         initializeData();
+        setListeners();
 
-        const dialogs = [];
-        const dialog_addshortcut = document.getElementById("addshortcut-dialog");
-        dialogs.push(new Dialog("addshortcut-dialog", dialog_addshortcut, openAddShortcutDialog, closeAddShortcutDialog));
-        const dialog_actionmenu = document.getElementById("actionmenu-dialog");
-        dialogs.push(new Dialog("actionmenu-dialog", dialog_actionmenu, openActionmenu, closeActionmenu));
-
-        // set listeners
-        const node_body = document.body;
-        node_body.addEventListener("click", (event) => {
-            const target = event.target;
-
-            if (!isInDialog(target)) {
-                dialogs.forEach((dialog) => {
-                    if (dialog.isOpen()) {
-                        dialog.close(dialog.node)
-                    }
-                })
-            }
-        });
-
-        const nodes_actionmenuTrigger = document.getElementsByClassName("actionmenu-trigger");
-        const actionmenuTriggers = Array.from(nodes_actionmenuTrigger);
-        actionmenuTriggers.forEach((actionmenuTrigger) => {
-            actionmenuTrigger.addEventListener("click", (event) => {
-                event.stopPropagation();
-                event.preventDefault();
-                openActionmenu(event);
-            });
-        })        
-
-        const node_addshortcut = document.querySelector("#addshortcut");
-        node_addshortcut.addEventListener("click", (event) => {
-            event.stopPropagation();
-            openAddShortcutDialog();
-        });
-
-        const node_dialogcancle = document.querySelector("#dialog-cancle");
-        node_dialogcancle.addEventListener("click", (event) => {
-            closeAddShortcutDialog();
-        });
-
-        const node_dialogdone = document.querySelector("#dialog-done");
-        node_dialogdone.addEventListener("click", (event) => {
-            addShortcut();
-            closeAddShortcutDialog();
-        });
-
-        // functions
-        function isInDialog(node) {
-            if (node.tagName.toLowerCase() == "body") return false;
-
-            const classList = node.classList;
-            if (classList.contains("dialog")) return true;
-            else {
-                return isInDialog(node.parentNode);
-            }
-        }
-
-        function openAddShortcutDialog() {
-            const dialog = document.getElementById("addshortcut-dialog");
-
-            dialog.style.display = "block";
-        }
-
-        function closeAddShortcutDialog(node) {
-            let dialog = node || document.getElementById("addshortcut-dialog");
-
-            const input_name = document.getElementById("dialogInput-name");
-            const input_url = document.getElementById("dialogInput-url");
-            input_name.value = "";
-            input_url.value = "";
-
-            dialog.style.display = "none";
-        }
-
-
-        function addShortcut() {
-            const input_name = document.getElementById("dialogInput-name");
-            const input_url = document.getElementById("dialogInput-url");
-
-            const name = input_name.value;
-            const url = input_url.value;
-
-            const node_QLinkList = document.getElementById("QLink-List");
-            const node_addshortcut = document.getElementById("addshortcut");
-
-            const newNode =  getQLinkNode(new QLink(name, url)); 
-            node_QLinkList.insertBefore(newNode, node_addshortcut);
-        }
-
-        function openActionmenu(event) {
-            // event.target => node(#actionmenu-trigger)
-            const trigger = event.target;
-            const QLink = trigger.parentNode;
-            const relativeX = QLink.offsetLeft;
-            const relativeY = QLink.offsetTop;
-
-            const actionmemu = document.getElementById("actionmenu-dialog");
-            actionmemu.style.display = "block";
-            actionmemu.style.top = relativeY + "px";
-            actionmemu.style.left = (relativeX - (actionmemu.offsetWidth - QLink.offsetWidth) / 2) + "px";
-        }
-
-        function closeActionmenu(node) {
-            let actionmemu = node || document.getElementById("actionmenu-dialog");
-            actionmemu.style.display = "none";
-        }
     </script>
 </body>
 </html>
