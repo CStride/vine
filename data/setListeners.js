@@ -29,12 +29,6 @@ function setAddshortcutDialogListeners() {
 }
 
 function openAddshortcutDialog() {
-    const input_name =  dialog_addshortcut.querySelector(".dialogInput-name");
-    const input_url = dialog_addshortcut.querySelector(".dialogInput-url");
-
-    input_name.value = "";
-    input_url.value = "";
-    
     dialog_addshortcut.style.display = "block";
 }
 
