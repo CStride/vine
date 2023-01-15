@@ -198,9 +198,15 @@ function clickToCloseDialogListener() {
 
 function setInitListeners() {
     const node_QLinkList = document.getElementById("QLink-List");
-    const initQLinks = Array.from(node_QLinkList.children);
-    initQLinks.pop();
-    initQLinks.forEach((shortcut) => {
+    const ListItems = Array.from(node_QLinkList.children);
+    
+    const QLinks = [];
+
+    ListItems.forEach((item) => {
+        const classList = item.classList;
+        if (classList.contains("QLink")) QLinks.push(item);
+    })
+    QLinks.forEach((shortcut) => {
         setShortcutListener(shortcut);
     })
 }
