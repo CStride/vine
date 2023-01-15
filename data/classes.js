@@ -2,7 +2,13 @@ class QLink {
     constructor(title, url) {
         this.title = title;
         this.url = url;
-        this.icon = url + "/favicon.ico"
+        this.icon = QLink.getFavicon(url);
+    }
+
+    static getFavicon(url) {
+        let end = url.length - 1;
+        if (url[end] == "/") return url + "favicon.ico";
+        else return url + "/favicon.ico";
     }
 }
 
