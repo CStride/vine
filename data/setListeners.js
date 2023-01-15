@@ -10,7 +10,6 @@ var activeQLink = null;
 const dialog_addshortcut = document.getElementById("addshortcut-dialog");
 function setAddshortcutDialogListeners() {
     dialog_addshortcut.addEventListener("click", (event) => {
-        event.
         openAddshortcutDialog();
     })
     
