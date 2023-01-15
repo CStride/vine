@@ -10,6 +10,7 @@ var activeQLink = null;
 const dialog_addshortcut = document.getElementById("addshortcut-dialog");
 function setAddshortcutDialogListeners() {
     dialog_addshortcut.addEventListener("click", (event) => {
+        event.
         openAddshortcutDialog();
     })
     
@@ -41,6 +42,12 @@ function openAddshortcutDialog() {
 function closeAddshortcutDialog(node) {
     let dialog = node || dialog_addshortcut;
 
+    const input_name =  dialog.querySelector(".dialogInput-name");
+    const input_url = dialog.querySelector(".dialogInput-url");
+
+    input_name.value = "";
+    input_url.value = "";
+
     dialog.style.display = "none";
 }
 
@@ -54,9 +61,7 @@ function addShortcut() {
     const node_QLinkList = document.getElementById("QLink-List");
     const node_addshortcut = document.getElementById("addshortcut");
 
-    console.log(name, url);
     const shortcut = new QLink(name, url);
-    console.log(shortcut);
     const newNode =  getQLinkNode(shortcut); 
     node_QLinkList.insertBefore(newNode, node_addshortcut);
     return newNode;
@@ -192,6 +197,7 @@ function clickToCloseDialogListener() {
     body_.addEventListener("click", (event) => {
         const target = event.target;
 
+        console.log("body has been clicked");
         if (!isInDialog(target)) {
             dialogs.forEach((dialog) => {
                 if (dialog.isOpen()) {
