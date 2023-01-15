@@ -71,10 +71,10 @@ function setShortcutListener(node) {
 }
 
 // set action-menu's listeners
-const actionmemu = document.getElementById("actionmenu-dialog");
+const actionmenu = document.getElementById("actionmenu-dialog");
 function setActionmenuListeners() {
-    const edit = actionmemu.querySelector(".menu-item.edit");
-    const remove = actionmemu.querySelector(".menu-item.remove");
+    const edit = actionmenu.querySelector(".menu-item.edit");
+    const remove = actionmenu.querySelector(".menu-item.remove");
     edit.addEventListener("click", (event) => {
         openEditShortcutDialog(activeQLink);
         closeActionmenu();
@@ -92,15 +92,15 @@ function openActionmenu(event) {
     const relativeX = QLink.offsetLeft;
     const relativeY = QLink.offsetTop;
 
-    const actionmemu = document.getElementById("actionmenu-dialog");
-    actionmemu.style.display = "block";
-    actionmemu.style.top = relativeY + "px";
-    actionmemu.style.left = (relativeX - (actionmemu.offsetWidth - QLink.offsetWidth) / 2) + "px";
+    const actionmenu = document.getElementById("actionmenu-dialog");
+    actionmenu.style.display = "block";
+    actionmenu.style.top = relativeY + "px";
+    actionmenu.style.left = (relativeX - (actionmenu.offsetWidth - QLink.offsetWidth) / 2) + "px";
 }
 
 function closeActionmenu(node) {
-    let actionmemu = node || document.getElementById("actionmenu-dialog");
-    actionmemu.style.display = "none";
+    let actionmenu = node || document.getElementById("actionmenu-dialog");
+    actionmenu.style.display = "none";
 }
 
 function removeShortcut(node) {
