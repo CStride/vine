@@ -1,5 +1,6 @@
 // import
 import { QLink, Dialog } from "./classes.js"
+import { getQLinkNode } from "../components/QLinkFunc.js"
 
 var activeQLink = null;
 
