@@ -73,8 +73,8 @@ function setShortcutListener(node) {
 // set action-menu's listeners
 const actionmemu = document.getElementById("actionmenu-dialog");
 function setActionmenuListeners() {
-    const edit = actionmemu.querySelector(".menu-item .edit");
-    const remove = actionmemu.querySelector(".menu-item .remove");
+    const edit = actionmemu.querySelector(".menu-item.edit");
+    const remove = actionmemu.querySelector(".menu-item.remove");
     edit.addEventListener("click", (event) => {
         openEditShortcutDialog(activeQLink);
         closeActionmenu();
