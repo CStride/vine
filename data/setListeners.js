@@ -104,8 +104,9 @@ function closeActionmenu(node) {
 }
 
 function removeShortcut(node) {
-    const QLinkList = document.getElementById("QLink-List");
-    QLinkList.remove(node);
+    node.remove();
+    // const QLinkList = document.getElementById("QLink-List");
+    // QLinkList.removeChild(node);
 }
 
 function openEditShortcutDialog(node) {
