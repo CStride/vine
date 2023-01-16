@@ -206,8 +206,6 @@ function setSearchListeners() {
     const searchButton = searchBox.querySelector("#icon-searching");
 
     inputBox.addEventListener("keydown", (event) => {
-        console.log("you have press a key");
-        console.log(event.keyCode);
         if (event.keyCode == 13) {
             const word = inputBox.value;
             searching(word);
