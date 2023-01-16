@@ -199,6 +199,25 @@ function clickToCloseDialogListener() {
     });
 }
 
+// set search-box's listeners
+const searchBox = document.getElementById("search-box");
+function setSearchListeners() {
+    const inputBox = searchBox.querySelector("#input-box");
+    const searchButton = searchBox.querySelector("#icon-searching");
+
+    inputBox.addEventListener("keydown", (event) => {
+        if (event.keycode == 13) {
+            const word = inputBox.value;
+            searching(word);
+        }
+    });
+
+    searchButton.addEventListener("click", (event) => {
+        const word = inputBox.value;
+        searching(word);
+    });
+}
+
 function setInitListeners() {
     const node_QLinkList = document.getElementById("QLink-List");
     const ListItems = Array.from(node_QLinkList.children);
@@ -223,26 +242,10 @@ function setListeners() {
     setEditshortcutDialogListeners();
     setActionmenuListeners();
     setAddshortcutTriggerListeners();
+    setSearchListeners();
 }
 
-// set search-box's listeners
-const searchBox = document.getElementById("search-box");
-function setSearchListeners() {
-    const inputBox = searchBox.querySelector("#input-box");
-    const searchButton = searchBox.querySelector("#icon-searching");
 
-    inputBox.addEventListener("keydown", (event) => {
-        if (event.keycode == 13) {
-            const word = inputBox.value;
-            searching(word);
-        }
-    });
-
-    searchButton.addEventListener("click", (event) => {
-        const word = inputBox.value;
-        searching(word);
-    });
-}
 function isInDialog(node) {
     if (node.tagName.toLowerCase() == "body") return false;
 
