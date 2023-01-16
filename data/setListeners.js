@@ -1,6 +1,6 @@
 // import
-import { QLink, Dialog } from "./classes.js"
-import { getQLinkNode } from "../components/QLinkFunc.js"
+import { QLink, Dialog } from "./classes.js";
+import { searching } from "./search.js";
 
 var activeQLink = null;
 
@@ -19,7 +19,6 @@ function setAddshortcutDialogListeners() {
     done.addEventListener("click", (event) => {
         event.stopPropagation();
         const newShortcut = addShortcut();
-        setShortcutListener(newShortcut);
         closeAddshortcutDialog();
     })
     cancle.addEventListener("click", (event) => {
@@ -190,7 +189,6 @@ function clickToCloseDialogListener() {
     body_.addEventListener("click", (event) => {
         const target = event.target;
 
-        console.log("body has been clicked");
         if (!isInDialog(target)) {
             dialogs.forEach((dialog) => {
                 if (dialog.isOpen()) {
@@ -227,6 +225,24 @@ function setListeners() {
     setAddshortcutTriggerListeners();
 }
 
+// set search-box's listeners
+const searchBox = document.getElementById("search-box");
+function setSearchListeners() {
+    const inputBox = searchBox.querySelector("#input-box");
+    const searchButton = searchBox.querySelector("#icon-searching");
+
+    inputBox.addEventListener("keydown", (event) => {
+        if (event.keycode == 13) {
+            const word = inputBox.value;
+            searching(word);
+        }
+    });
+
+    searchButton.addEventListener("click", (event) => {
+        const word = inputBox.value;
+        searching(word);
+    });
+}
 function isInDialog(node) {
     if (node.tagName.toLowerCase() == "body") return false;
 
@@ -235,6 +251,39 @@ function isInDialog(node) {
     else {
         return isInDialog(node.parentNode);
     }
+}
+
+function getQLinkNode({title, url, icon}) {
+    const node_QLink = document.createElement("a");
+    node_QLink.setAttribute("class", "QLink");
+    node_QLink.setAttribute("title", title);
+    node_QLink.setAttribute("href", url);
+
+    const node_actionMenu = document.createElement("button");
+    node_actionMenu.setAttribute("class", "actionmenu-trigger");
+    
+
+    const node_iconContainer = document.createElement("div");
+    node_iconContainer.setAttribute("class", "iconContainer");
+    const node_icon = document.createElement("img");
+    node_icon.setAttribute("class", "icon-QLink");
+    node_icon.setAttribute("src", icon);
+    node_iconContainer.appendChild(node_icon);
+
+    const node_titleContainer = document.createElement("div");
+    node_titleContainer.setAttribute("class", "titleContainer");
+    const node_title = document.createElement("span");
+    const textnode_title = document.createTextNode(title);
+    node_title.appendChild(textnode_title);
+    node_titleContainer.appendChild(node_title);
+
+    node_QLink.appendChild(node_actionMenu);
+    node_QLink.appendChild(node_iconContainer);
+    node_QLink.appendChild(node_titleContainer);
+
+    setShortcutListener(node_QLink);
+
+    return node_QLink;
 }
 
 export { setListeners };
