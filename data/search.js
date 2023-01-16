@@ -53,7 +53,7 @@ function getSearchEngine() {
 }
 
 function searching(word) {
-    const searchEngine = SEMap[getSearchEngine];
+    const searchEngine = SEMap[getSearchEngine()];
 
     searchEngine.searching(word);
 }
