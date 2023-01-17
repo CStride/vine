@@ -16,7 +16,7 @@ function initializeQLinks() {
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
             const shortcutList = JSON.parse(xmlhttp.responseText);
 
-            const QLinkNodes = [];
+            const QLinkNodes = shortcutList.shortcuts;
             shortcutList.forEach((shortcut) => {
                 QLinkNodes.push(getQLinkNode(new QLink(shortcut.title, shortcut.url)));
             })
