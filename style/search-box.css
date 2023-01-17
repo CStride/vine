@@ -50,7 +50,7 @@
 
 #search-box > #search-history {
     width: 100%;
-    height: 400px;
+    height: fit-content;
     padding: 10px 0;
     position: absolute;
     left: 0;
@@ -74,14 +74,17 @@
 .searchHistory-item > img {
     content: url(../assets/time.png);
     background-color: transparent;
-    margin: 0 5px;
+    margin-left: 12px;
     width: 24px;
     height: 24px;
     align-self: center;
 }
 .searchHistory-item > span {
-    width: 360px;
+    width: 480px;
     height: 40px;
+    text-align: left;
+    line-height: 40px;
+    margin: auto;
 
     overflow-x: hidden;
     white-space: nowrap;
@@ -93,11 +96,11 @@
     align-self: center;
     width: 16px;
     height: 16px;
-    margin: 0 5px;
+    margin-right: 24px;
     border: 0;
     background-color: transparent;
     background-image: url(../assets/delete.png);
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 16px;
 }

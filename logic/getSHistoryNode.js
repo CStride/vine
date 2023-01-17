@@ -1,3 +1,5 @@
+import { setSearchHistoryItemListeners } from "./setListeners.js"
+
 function getSHistoryNode() {
     const newNode = document.createElement("div");
     newNode.setAttribute("class", "searchHistory-item");
@@ -12,6 +14,8 @@ function getSHistoryNode() {
     newNode.appendChild(text);
     newNode.appendChild(deleteButton);
 
+    setSearchHistoryItemListeners(newNode);
+    
     return newNode;
 }
 

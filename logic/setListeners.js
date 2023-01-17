@@ -187,6 +187,9 @@ function clickToCloseDialogListener() {
     dialogs.push(new Dialog("actionmenu-dialog", document.getElementById("actionmenu-dialog"), 
     openActionmenu, closeActionmenu));
 
+    dialogs.push(new Dialog("searchHistory-dialog", document.getElementById("search-history"),
+    openSearchHistory, closeSearchHistory));
+
     body_.addEventListener("click", (event) => {
         const target = event.target;
 
@@ -213,10 +216,47 @@ function setSearchListeners() {
         }
     });
 
+    inputBox.addEventListener("click", (event) => {
+        event.stopPropagation();
+        openSearchHistory();
+    });
+
     searchButton.addEventListener("click", (event) => {
         const word = inputBox.value;
+        inputBox.value = "";
         searching(word);
     });
+}
+
+function openSearchHistory() {
+    const searchHistory = document.getElementById("search-history");
+
+    const child = searchHistory.children;
+    if (child.length > 0) searchHistory.style.display = "block";
+}
+
+function closeSearchHistory() {
+    const searchHistory = document.getElementById("search-history");
+
+    searchHistory.style.display = "none";
+}
+
+function setSearchHistoryItemListeners(node) {
+    node.addEventListener("click", (event) => {
+        event.stopPropagation();
+
+        const text = node.querySelector("span").innerText;
+
+        const searchInput = document.getElementById("input-box");
+
+        searchInput.value = text;
+    });
+
+    const remove = node.querySelector("button");
+    remove.addEventListener("click", (event) => {
+        node.remove();
+    })
+
 }
 
 function setInitListeners() {
@@ -259,4 +299,4 @@ function isInDialog(node) {
 
 
 
-export { setShortcutListener, setListeners };
+export { setShortcutListener, setSearchHistoryItemListeners, setListeners };
