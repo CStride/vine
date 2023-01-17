@@ -1,12 +1,13 @@
 import { setSearchHistoryItemListeners } from "./setListeners.js"
 
-function getSHistoryNode(text) {
+function getSHistoryNode(content) {
     const newNode = document.createElement("div");
     newNode.setAttribute("class", "searchHistory-item");
 
     const time = document.createElement("img");
 
     const text = document.createElement("span");
+    text.innerText = content;
 
     const deleteButton = document.createElement("button");
 
