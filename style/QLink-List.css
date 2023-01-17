@@ -4,6 +4,9 @@
 }
 
 #QLink-List {
+    position: relative;
+    z-index: 1;
+
     width: 540px;
     height: 240px;
     border: transparent solid 1px;
