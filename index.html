@@ -15,6 +15,7 @@
         <div id="center">
             <span id="title">VINE</span>
             <div id="search-box">
+                <div id="searchengine-selector"></div>
                 <div id="search-engine"></div>
                 <input id="input-box" type="text" placeholder="Search or type a URL"/>
                 <img id="icon-searching" class="icon" src="./assets/searching.png"/>
@@ -35,40 +36,41 @@
                 </div>
             </div>
         </div>
-    </div>
-    <div id="addshortcut-dialog" class="dialog shortcut-dialog">
-        <span>Add shortcut</span>
-        <div class="dialogItem-container">
-            <div class="dialog-item">
-                <span>Name</span>
-                <input class="dialogInput-name" type="text"/>
-            </div>
-            <div class="dialog-item">
-                <span>URL</span>
-                <input class="dialogInput-url" type="text"/>
-            </div>
-        </div>
-        <div class="dialogButton-container">
-            <button class="dialog-done">Done</button>
-            <button class="dialog-cancle">Cancle</button>
-        </div>
-    </div>
 
-    <div id="editshortcut-dialog" class="dialog shortcut-dialog">
-        <span>Edit shortcut</span>
-        <div class="dialogItem-container">
-            <div class="dialog-item">
-                <span>Name</span>
-                <input class="dialogInput-name" type="text"/>
+        <div id="addshortcut-dialog" class="dialog shortcut-dialog">
+            <span>Add shortcut</span>
+            <div class="dialogItem-container">
+                <div class="dialog-item">
+                    <span>Name</span>
+                    <input class="dialogInput-name" type="text"/>
+                </div>
+                <div class="dialog-item">
+                    <span>URL</span>
+                    <input class="dialogInput-url" type="text"/>
+                </div>
             </div>
-            <div class="dialog-item">
-                <span>URL</span>
-                <input class="dialogInput-url" type="text"/>
+            <div class="dialogButton-container">
+                <button class="dialog-done">Done</button>
+                <button class="dialog-cancle">Cancle</button>
             </div>
         </div>
-        <div class="dialogButton-container">
-            <button class="dialog-done">Done</button>
-            <button class="dialog-cancle">Cancle</button>
+    
+        <div id="editshortcut-dialog" class="dialog shortcut-dialog">
+            <span>Edit shortcut</span>
+            <div class="dialogItem-container">
+                <div class="dialog-item">
+                    <span>Name</span>
+                    <input class="dialogInput-name" type="text"/>
+                </div>
+                <div class="dialog-item">
+                    <span>URL</span>
+                    <input class="dialogInput-url" type="text"/>
+                </div>
+            </div>
+            <div class="dialogButton-container">
+                <button class="dialog-done">Done</button>
+                <button class="dialog-cancle">Cancle</button>
+            </div>
         </div>
     </div>
     <script type="module">
