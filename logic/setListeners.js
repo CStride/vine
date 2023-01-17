@@ -289,4 +289,4 @@ function getQLinkNode({title, url, icon}) {
     return node_QLink;
 }
 
-export { setListeners };
+export { getQLinkNode, setListeners };

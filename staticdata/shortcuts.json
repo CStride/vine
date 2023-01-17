@@ -1,0 +1,16 @@
+{
+    "shortcuts": [
+        {
+            "name": "百度",
+            "url": "https://www.baidu.com"
+        },
+        {
+            "name": "B站",
+            "url": "https://www.bilibili.com"
+        },
+        {
+            "name": "GitHub",
+            "url": "https://www.github.com"
+        }
+    ]
+}
