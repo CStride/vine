@@ -1,15 +1,15 @@
 {
     "shortcuts": [
         {
-            "name": "百度",
+            "title": "百度",
             "url": "https://www.baidu.com"
         },
         {
-            "name": "B站",
+            "title": "B站",
             "url": "https://www.bilibili.com"
         },
         {
-            "name": "GitHub",
+            "title": "GitHub",
             "url": "https://www.github.com"
         }
     ]
