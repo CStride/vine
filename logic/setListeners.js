@@ -248,7 +248,6 @@ function setSearchHistoryItemListeners(node) {
 
         const text = node.querySelector("span").innerText;
 
-        console.log("text: ", text);
         const searchInput = document.getElementById("input-box");
 
         searchInput.value = text;
@@ -256,8 +255,13 @@ function setSearchHistoryItemListeners(node) {
 
     const remove = node.querySelector("button");
     remove.addEventListener("click", (event) => {
-        console.log("should be removed");
+        event.stopPropagation();
+
         node.remove();
+
+        if (document.getElementById("search-history").children.length == 0) {
+            closeSearchHistory();
+        }
     });
 
 }
