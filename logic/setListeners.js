@@ -256,6 +256,7 @@ function setSearchHistoryItemListeners(node) {
 
     const remove = node.querySelector("button");
     remove.addEventListener("click", (event) => {
+        console.log("should be removed");
         node.remove();
     });
 
