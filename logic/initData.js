@@ -14,9 +14,10 @@ function initializeQLinks() {
         // readyState of 4 indicates: response is complete, and response is ready
         // status of 200 indicates: request is successful
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-            const shortcutList = JSON.parse(xmlhttp.responseText);
-
-            const QLinkNodes = shortcutList.shortcuts;
+            const parseResult = JSON.parse(xmlhttp.responseText);
+            const shortcutList = parseResult.shortcuts;
+            
+            const QLinkNodes = [];
             shortcutList.forEach((shortcut) => {
                 QLinkNodes.push(getQLinkNode(new QLink(shortcut.title, shortcut.url)));
             })
