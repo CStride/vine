@@ -192,6 +192,7 @@ function clickToCloseDialogListener() {
 
     body_.addEventListener("click", (event) => {
         const target = event.target;
+        console.log("body has been clicked!");
 
         if (!isInDialog(target)) {
             dialogs.forEach((dialog) => {
@@ -247,6 +248,7 @@ function setSearchHistoryItemListeners(node) {
 
         const text = node.querySelector("span").innerText;
 
+        console.log("text: ", text);
         const searchInput = document.getElementById("input-box");
 
         searchInput.value = text;
@@ -255,7 +257,7 @@ function setSearchHistoryItemListeners(node) {
     const remove = node.querySelector("button");
     remove.addEventListener("click", (event) => {
         node.remove();
-    })
+    });
 
 }
 
