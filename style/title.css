@@ -7,9 +7,10 @@
     margin: 12px 0;
     width: fit-content;
     height: fit-content;
+    color: white;
 
     text-align: center;
     font-family: violetsimle;
-    font-size: 2em;
+    font-size: 3em;
     font-weight: 600;
 }

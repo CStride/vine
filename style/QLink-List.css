@@ -1,5 +1,5 @@
 :root {
-    --backgroundColor--: white;
+    --backgroundColor--: transparent;
     --display-actionmenutrigger--: none;
 }
 
@@ -18,9 +18,11 @@
 
 #QLink-List > .QLink, #addshortcut {
     text-decoration: none;
-    color: black;
+
     text-align: center;
     position: relative;
+
+    color: white;
 
     width: 100px;
     height: 100px;
@@ -32,7 +34,7 @@
 
 }
 #QLink-List > .QLink:hover, #addshortcut:hover {
-    --backgroundColor--: #f2f4f6;
+    --backgroundColor--: rgba(242, 244, 246, 0.5);
     --display-actionmenutrigger--: block;
     /* background-color: #f2f4f6; */
 }
@@ -49,8 +51,9 @@
     border: 0;
     border-radius: 50%;
     
-    background-color: var(--backgroundColor--);
+    background-color: transparent;
     background-image: url("../assets/ellipsis.png");
+    color: transparent;
     background-position: center;
     background-repeat: no-repeat;
     background-size: 60%;
@@ -94,7 +97,7 @@
     height: 48px;
     border-radius: 50%;
 
-    background-color: #bbded6;
+    background-color: white;
 
     position: relative;
     left: 50%;
