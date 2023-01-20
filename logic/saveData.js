@@ -16,21 +16,4 @@ function getShortcutsFromClient() {
     return shortcuts;
 }
 
-function getSearchHistoryFromClient() {
-    const searchhistory = document.getElementById("search-history");
-
-    const itemNodes = searchhistory.querySelectorAll(".searchHistory-item");
-    const items = Array.from(itemNodes);
-    const SH_items = [];
-
-    items.forEach((item) => {
-        SH_items.push({
-            time: "",
-            text: item.querySelector("span").innerText
-        })
-    }) 
-
-    return SH_items;
-}
-
-export { getShortcutsFromClient, getSearchHistoryFromClient }
+export { getShortcutsFromClient }

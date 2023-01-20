@@ -1,11 +1,9 @@
 import { QLink } from "./classes.js"
 import { getQLinkNode } from "./getQLinkNode.js";
-import { getSHistoryNode } from "./getSHistoryNode.js";
-import { getShortcuts, getSearchHistory } from "./http.js";
+import { getShortcuts } from "./http.js";
 
 function initializeData() {
     getShortcuts(initializeQLinks);
-    getSearchHistory(initializeSearchHistory);
 }
 
 
@@ -27,21 +25,6 @@ function insertQLinksToDom(QLinks) {
     });
 }
 
-function initializeSearchHistory(searchHistoryItems) {
-    const searchHistoryItemNodes = [];
-
-    searchHistoryItems.forEach((item) => {
-        searchHistoryItemNodes.push(getSHistoryNode(item.text));
-    })
-    insertSearchHistoryItemsToDom(searchHistoryItemNodes);
-}
-function insertSearchHistoryItemsToDom(searchHistoryItemNodes) {
-    const node_searchHistory = document.getElementById("search-history");
-
-    searchHistoryItemNodes.forEach((node) => {
-        node_searchHistory.appendChild(node);
-    })
-}
 
 export { initializeData };
 

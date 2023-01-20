@@ -1,4 +1,4 @@
-import { getShortcutsFromClient, getSearchHistoryFromClient } from "./saveData.js";
+import { getShortcutsFromClient } from "./saveData.js";
 
 const HOST = "localhost"
 const PORT = "4040"
@@ -27,22 +27,6 @@ function getShortcuts(resolve, err) {
     xmlhttp.send();
 }
 
-function getSearchHistory(resolve, err) {
-    let xmlhttp = new XMLHttpRequest();
-
-    const data = "init/searchhistory"
-    xmlhttp.onreadystatechange = function () {
-        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-            const parseResult = JSON.parse(xmlhttp.responseText);
-            const searchHistoryItems = parseResult.searchHistoryItems;
-
-            resolve(searchHistoryItems);
-        }
-    }
-
-    xmlhttp.open("get", url + data, true);
-    xmlhttp.send();
-}
 
 function saveShortcuts() {
     let xmlhttp = new XMLHttpRequest();
@@ -66,4 +50,4 @@ function saveShortcuts() {
 }
 
 
-export { getShortcuts, getSearchHistory, saveShortcuts };
+export { getShortcuts, saveShortcuts };
