@@ -1,34 +1,21 @@
 import { QLink } from "./classes.js"
 import { getQLinkNode } from "./getQLinkNode.js";
 import { getSHistoryNode } from "./getSHistoryNode.js";
+import { getShortcuts, getSearchHistory } from "./http.js";
 
 function initializeData() {
-    initializeQLinks();
-    initializeSearchHistory();
+    getShortcuts(initializeQLinks);
+    getSearchHistory(initializeSearchHistory);
 }
 
 
+function initializeQLinks(shortcutList) {
+    const QLinkNodes = [];
 
-function initializeQLinks() {
-    var xmlhttp = new XMLHttpRequest();
-
-    xmlhttp.onreadystatechange = function () {
-        // readyState of 4 indicates: response is complete, and response is ready
-        // status of 200 indicates: request is successful
-        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-            const parseResult = JSON.parse(xmlhttp.responseText);
-            const shortcutList = parseResult.shortcuts;
-
-            const QLinkNodes = [];
-            shortcutList.forEach((shortcut) => {
-                QLinkNodes.push(getQLinkNode(new QLink(shortcut.title, shortcut.url)));
-            })
-
-            insertQLinksToDom(QLinkNodes);
-        }
-    }
-    xmlhttp.open("get", "./staticdata/shortcuts.json", true);
-    xmlhttp.send();
+    shortcutList.forEach((shortcut) => {
+        QLinkNodes.push(getQLinkNode(new QLink(shortcut.title, shortcut.url)))
+    })
+    insertQLinksToDom(QLinkNodes);
 
 }
 function insertQLinksToDom(QLinks) {
@@ -40,27 +27,13 @@ function insertQLinksToDom(QLinks) {
     });
 }
 
-function initializeSearchHistory() {
-    var xmlhttp = new XMLHttpRequest();
+function initializeSearchHistory(searchHistoryItems) {
+    const searchHistoryItemNodes = [];
 
-    xmlhttp.onreadystatechange = function () {
-        // readyState of 4 indicates: response is complete, and response is ready
-        // status of 200 indicates: request is successful
-        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-            const parseResult = JSON.parse(xmlhttp.responseText);
-            const searchHistoryItems = parseResult.searchHistoryItems;
-
-            const searchHistoryItemNodes = [];
-            searchHistoryItems.forEach((item) => {
-                searchHistoryItemNodes.push(getSHistoryNode(item.text));
-            })
-
-            insertSearchHistoryItemsToDom(searchHistoryItemNodes);
-
-        }
-    }
-    xmlhttp.open("get", "./staticdata/searchHistory.json", true);
-    xmlhttp.send();
+    searchHistoryItems.forEach((item) => {
+        searchHistoryItemNodes.push(getSHistoryNode(item.text));
+    })
+    insertSearchHistoryItemsToDom(searchHistoryItemNodes);
 }
 function insertSearchHistoryItemsToDom(searchHistoryItemNodes) {
     const node_searchHistory = document.getElementById("search-history");

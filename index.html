@@ -76,12 +76,15 @@
     <script type="module">
         import { initializeData } from "./logic/initData.js"
         import { setListeners } from "./logic/setListeners.js"
+        import { save } from "./logic/beforeunload.js"
 
         // initialize dom
 
         // initialize data
         initializeData();
         setListeners();
+
+        window.addEventListener("beforeunload", save);
 
     </script>
 </body>

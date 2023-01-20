@@ -18,6 +18,8 @@
 }
 
 #layout > #center {
+    position: relative;
+    z-index: 1;
     width: calc(100% - 4px);
     height: calc(100% - 154px);
     border-width: 2px;

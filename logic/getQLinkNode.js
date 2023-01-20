@@ -15,6 +15,9 @@ function getQLinkNode({title, url, icon}) {
     const node_icon = document.createElement("img");
     node_icon.setAttribute("class", "icon-QLink");
     node_icon.setAttribute("src", icon);
+    node_icon.addEventListener("error", (event) => {
+        node_icon.src = "../assets/default.jpg"
+    })
     node_iconContainer.appendChild(node_icon);
 
     const node_titleContainer = document.createElement("div");
